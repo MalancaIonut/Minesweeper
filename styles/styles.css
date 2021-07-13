@@ -1,0 +1,72 @@
+
+body {
+	background-color: black;
+}
+
+h1 {
+	color: white;
+	font-family: Andale Mono, monospace;
+	font-size: 60px;
+	text-align: center;
+}
+
+.difficulty {
+	align-content: center;
+	text-align: center;
+}
+
+.bttn {
+	background-image: url('../images/cell.png');
+	width: 25px;
+	height: 25px;
+}
+
+.board {
+	align-content: center;
+	text-align: center;
+}
+
+#afterGame {
+	align-content: center;
+	text-align: center;
+}
+
+.display-time-flags {
+	visibility: hidden;
+	position: relative;
+	left: 590px;
+	width: 740px;
+	height: 40px;
+	align-content: center;
+	text-align: center;
+	border: 5px solid grey;
+	border-radius: 4px;
+	background-color: grey;
+
+}
+
+#message {
+	font-family: Andale Mono, monospace;
+	font-size: 40px;
+	color: red;
+}
+
+#time {
+	position: relative;
+	left: 190px;
+	bottom: 10px;
+	color: red;
+	font-size: 30px;
+}
+
+#flags {
+	position: relative;
+	left: -200px;
+	bottom: 70px;
+	color: red;
+	font-size: 30px;
+}
+
+#reset {
+	visibility: hidden;
+}
