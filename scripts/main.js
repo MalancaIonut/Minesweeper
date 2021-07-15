@@ -90,29 +90,29 @@ function win() {
 
 // If you clicked on a empty cell and anothers empty cells is around.
 function emptyCell(row, column) {
-    for (let i = row - 1; i <= row + 1; ++i) {
-    	if (i === 0) {
-    		++i;
-    	} else if (i === noLines + 1) {
-    		break;
+	for (let i = row - 1; i <= row + 1; ++i) {
+    		for (let j = column - 1; j <= column + 1; ++j) {
+        		if (checkCoordinates(i, j)) {
+            	    		if (board[i][j] >= 0 && checkedBoard[i][j] === 1) {
+               				checkedBoard[i][j] = 0;
+                			displayCell(i, j);
+                			if (board[i][j] === 0) {
+                				board[i][j] = -2;
+                    				emptyCell(i, j);
+                			}
+                    		}
+			}
+        	}
     	}
-        for (let j = column - 1; j <= column + 1; ++j) {
-            if (j === 0) {
-                ++j;
-            } else if (j === noColumns + 1) {
-            	break;
-            }
-            if (board[i][j] >= 0 && checkedBoard[i][j] === 1) {
-                checkedBoard[i][j] = 0;
-                displayCell(i, j);
-                if (board[i][j] === 0) {
-                	board[i][j] = -2;
-                    emptyCell(i, j);
-                }
-            }
-        }
-    }
-    return false;
+    	return false;
+}
+
+// Check that both coordinates are inside the matrix.
+function checkCoordinates(i, j) {
+	if (i > 0 && j > 0 && i < noLines + 1 && j < noColumns + 1) {
+		return true;
+	}
+	return false;
 }
 // Stop game time.
 function stopTime() {
