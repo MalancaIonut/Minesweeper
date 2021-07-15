@@ -25,24 +25,11 @@ function displayTime() {
 // Display image of cell.
 function displayCell(row, column) {
 	let idCell = row + "." + column;
-	if (board[row][column] === 0) {
+	let cell = board[row][column];
+	if (cell === 0) {
 		document.getElementById(idCell).style.backgroundImage = "url('images/empty-cell.png')";
-	} else if (board[row][column] === 1) {
-		document.getElementById(idCell).style.backgroundImage = "url('images/1.png')";
-	} else if (board[row][column] === 2) {
-		document.getElementById(idCell).style.backgroundImage = "url('images/2.png')";
-	} else if (board[row][column] === 3) {
-		document.getElementById(idCell).style.backgroundImage = "url('images/3.png')";
-	} else if (board[row][column] === 4) {
-		document.getElementById(idCell).style.backgroundImage = "url('images/4.png')";
-	} else if (board[row][column] === 5) {
-		document.getElementById(idCell).style.backgroundImage = "url('images/5.png')"; 
-	} else if (board[row][column] === 6) {
-		document.getElementById(idCell).style.backgroundImage = "url('images/6.png')";
-	} else if (board[row][column] === 7) {
-		document.getElementById(idCell).style.backgroundImage = "url('images/7.png')";
-	} else if (board[row][column] === 8) {
-		document.getElementById(idCell).style.backgroundImage = "url('images/8.png')";
+	} else if (cell > 0) {
+		document.getElementById(idCell).style.backgroundImage = "url('images/"+ cell +".png')";
 	}
 	return false;
 }
